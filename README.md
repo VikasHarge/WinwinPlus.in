@@ -5,7 +5,7 @@ this webpage is fully responsive.
 
 ## Over View of Webpage
 
-<img src="./media src/webScreen.png" >
+<img src="./media src/webScreen1.png" >
 
 ## Languages/tools Used
 
