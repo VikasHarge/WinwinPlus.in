@@ -1,3 +1,14 @@
+
+
+// Pre loader
+var preloader = document.getElementById("preloader");
+
+window.addEventListener("load", ()=>{
+    preloader.style.display = 'none';
+})
+
+
+
 // Change NavBar on scroll
 
 window.addEventListener('scroll', ()=>{
@@ -25,10 +36,6 @@ faqs.forEach(faq =>{
 window.addEventListener('load', ()=>{
     firstFaq.classList.toggle('open');
 })
-
-
-
-
 
 
 // show/hide course details
@@ -131,6 +138,33 @@ var invest_amount_out = document.getElementById('invest_amount_out')
 var return_amount_out = document.getElementById('return_amount_out')
 var total_amount_out = document.getElementById('total_amount_out')
 
+// chart Js
+const myChart = document.getElementById('myChart').getContext('2d');
+
+var sipData = {
+    type : 'doughnut',
+    data : {
+        labels : [
+            'Invested Ammount',
+            'Estimated Return'
+        ],
+        datasets : [{
+            label: 'SIP/LUMPSUM',
+            data : [10, 10],
+            backgroundColor: [
+                '#f75842',
+                '#3dc3ea',
+            ],
+            borderColor:[
+                '#1c1f45'
+            ],
+            hoverOffset: 1,
+        }],
+    },
+}
+
+let sipChart = new Chart(myChart, sipData);
+
 
 
 
@@ -167,15 +201,17 @@ const calculateSip = ()=>{
     const totalInvestOut = investR.toLocaleString();
     const totalReturnOut = returnR>0?returnR.toLocaleString():0;
 
+    sipData.data.datasets[0].data[0] = Number(investR);
+    sipData.data.datasets[0].data[1] = Number(returnR);
 
+    sipChart.update();
+
+ 
     invest_amount_out.innerHTML = totalInvestOut;
     return_amount_out.innerHTML = totalReturnOut;
     total_amount_out.innerHTML = totalOut;
 
 }
 
-const whatisselected = ()=>{
-
-}
 
 

@@ -24,9 +24,15 @@
         <meta property="og:image:type" content="image/jpeg">
         
         <meta property="og:image:width" content="300">
-    <meta property="og:image:height" content="300">
+        <meta property="og:image:height" content="300">
+
+        <!-- Moment JS -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+        <!-- Chart Js Script -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
         
-        
+
         <!-- Head icon -->
         <link rel="icon" style="width: 16px;" href="./media src/media/favicon_icon.png" type="image">
     
@@ -50,6 +56,8 @@
         <link rel="stylesheet" href="./styles.css">
     </head>
 <body>
+
+        
      <!--================ NAVBAR START ==================-->
      <div class="nav_strip" >
         <div class="contaier strip_container" >
@@ -173,8 +181,11 @@
                                 </span>
                             </div>
                         </div>
-                    </div>     
-                          
+                    </div> 
+                    <!-- SIP Value Chart -->
+                    <div class="sip_value_box Chart" >
+                        <canvas class="sip_value_box Chart" id="myChart" ></canvas>
+                    </div>       
                 </article>
                 <article class="sip_info_container" >
                     <div>
@@ -323,7 +334,6 @@
         <a class="call_now"  href="tel:+917768000789"><span> 📞 Call Us</span></a>
         <a class="free_demat" href="https://secure.icicidirect.com/accountopening?rmcode=VIGBB727" target="_blank" ><span>Get Free Demat</span></a>
     </div>
-
 
 
 
